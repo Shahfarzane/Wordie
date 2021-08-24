@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin: 1em;
+  color: rgb(37, 129, 235);
+}
+
+#done,
+#not {
+  color: #fff;
+  background: rgb(37, 129, 235);
+}
+
+#not.activeChoice,
+#done.activeChoice {
+  color: rgb(37, 129, 235);
+  background: #fff;
+}
+
+#done:hover,
+#not:hover {
+  border: 2.5px solid green;
+}
+
+.card {
+  font-size: 1.5em;
+  min-height: 2em;
+  width: 90%;
+  max-width: 50ch;
+  margin-top: 0.5em;
+  border: 1px solid blue;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 3px solid blue;
+}
+
+.checkbox {
+  margin: 1em 1em;
+  transform: scale(2.5);
+}
+
+.card-title {
+  margin: 0.5em 0.5em 0.5em;
+  font-weight: bold;
+}
+
+#addform-title {
+  width: 90%;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding: 0.2em;
+}
+
+#addform-body {
+  width: 90%;
+  height: 70%;
+  font-size: 1.2em;
+  padding: 0.4em;
+}
+
+.modal {
+  display: none;
+  min-height: 40vh;
+  max-height: 40vh;
+  width: 40vw;
+  min-width: 460px;
+  max-width: 500px;
+  position: relative;
+  background: #ccc;
+  align-items: center;
+  justify-content: center;
+}
