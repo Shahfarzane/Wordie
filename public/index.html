@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordie - Learn new words everyday</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="logic.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  </head>
+  <body>
+     <div class="ui container segment" id="mainForm">
+ 
+      <div class="ui raised segment">
+        <span class="title"> Word of the day 
+            <button class="circular ui icon button positive" id="add">+</button>
+        </span>
+        <div class="ui buttons">
+          <button id="not" class="ui button">Left to learn</button>
+          <div class="or" data-text="OR"></div>
+          <button id="done" class="ui button">Learned</button>
+        </div>
+      </div>
+        <div id="content" class="ui segment items">
+        
+        </div>
+      </div>
+
+
+    <div class="ui modal" id="addForm">
+
+        <div class="ui form">
+
+          <div class="field">
+            <label>Word</label>
+          <input
+            type="text"
+            name=""
+            id="addform-title"
+          />
+          </div>
+          <div class="field">
+            <label>Meaning</label>
+          <textarea
+            name=""
+            id="addform-body"
+            cols="5"
+            rows="5"
+          ></textarea>
+          </div>
+        <div class="ui buttons">
+          <button class="ui labeled icon button negative" id="addform-cancel"> <i class="close icon"></i>Cancel</button>
+          <div class="or"></div>
+          <button class="ui right labeled icon button positive" id="addform-save">Save</button>
+        </div>
+      </div>
+      
+    </div>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <div class="modal-input">
+          <input type="text" name="" id="modal-title" />
+          <textarea name="" id="modal-body" cols="30" rows="10"></textarea>
+        </div>
+        <div class="ui buttons">
+          <button class="ui button" id="modal-back">Back</button>
+          <button class="ui button" id="modal-delete">Delete</button>
+          <button class="ui button" id="modal-edit">Edit</button>
+          <button class="ui button" id="modal-save">Save</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+$(function(){
+	$("#test").click(function(){
+		$(".test").modal('show');
+	});
+	$(".test").modal({
+		closable: true
+	});
+});
+</script>
