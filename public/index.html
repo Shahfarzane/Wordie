@@ -40,16 +40,16 @@
 
     <div class="ui modal" id="addForm">
       <div class="ui form">
-           <div class="img-display" id="addForm-img">
-            <img
-              src=""
-              alt="image"
-              class="form-img"
-              id="addform-img-display"
-              name=""
-            />
-            <button id="addform-img-btn" class="img-change-btn">Change</button>
-          </div>
+        <div class="img-display" id="addForm-img">
+          <img
+            src=""
+            alt="image"
+            class="form-img"
+            id="addform-img-display"
+            name=""
+          />
+          <button id="addform-img-btn" class="img-change-btn">Change</button>
+        </div>
         <div class="field">
           <label>Word</label>
           <input type="text" name="" id="addform-title" />
@@ -76,16 +76,16 @@
       <div class="content">
         <div class="modal-input">
           <div class="ui form">
-          <div class="img-display" id="modal-img">
-            <img
-              src=""
-              alt="image"
-              class="form-img"
-              id="modal-img-display"
-              name=""
-            />
-            <button id="modal-img-btn" class="img-change-btn">Change</button>
-          </div>
+            <div class="img-display" id="modal-img">
+              <img
+                src=""
+                alt="image"
+                class="form-img"
+                id="modal-img-display"
+                name=""
+              />
+              <button id="modal-img-btn" class="img-change-btn">Change</button>
+            </div>
             <div class="field">
               <input type="text" name="" id="modal-title" />
             </div>
@@ -105,25 +105,28 @@
     </div>
 
     <div class="ui modal" id="searchForm" name="">
-      <div class="header search-header">
+      <div class="header">
         <i class="close icon" id="search-exit"></i>
         <h3 class="ui header">
           <div class="content">Image Search</div>
         </h3>
 
-        <div class="btngroup search-btngroup">
-          <input
-            type="text"
-            name=""
-            id="search-query"
-            class="modal-title search-query"
-          />
-          <button id="search-btn" class="ui basic button">
-            <i class="search icon"></i>Search
-          </button>
+        <div class="ui category search">
+          <div class="ui icon input">
+            <input
+              class="prompt"
+              type="text"
+              placeholder="Search images.."
+              id="search-query"
+            />
+            <button id="search-btn" class="ui basic button">
+              <i class="search icon"></i>Search
+            </button>
+          </div>
         </div>
+
         <div class="ui grid">
-          <div class="four column row" id="search-content"></div>
+          <div class="results" id="search-content"></div>
         </div>
       </div>
     </div>
