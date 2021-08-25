@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wordie - Learn new words everyday</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="logic.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="index.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-     <div class="ui container segment" id="mainForm">
- 
+    <div class="ui container segment" id="mainForm">
       <div class="ui raised segment">
-        <span class="title"> Word of the day 
-            <button class="circular ui icon button positive" id="add">+</button>
+        <span class="title">
+          Word of the day
+          <button class="circular ui icon button positive" id="add">+</button>
         </span>
         <div class="ui buttons">
           <button id="not" class="ui button">Left to learn</button>
@@ -25,16 +35,12 @@
           <button id="done" class="ui button">Learned</button>
         </div>
       </div>
-        <div id="content" class="ui segment items">
-        
-        </div>
-      </div>
-
+      <div id="content" class="ui segment items"></div>
+    </div>
 
     <div class="ui modal" id="addForm">
-
-        <div class="ui form">
-          <div class="img-display" id="addForm-img">
+      <div class="ui form">
+           <div class="img-display" id="addForm-img">
             <img
               src=""
               alt="image"
@@ -44,36 +50,33 @@
             />
             <button id="addform-img-btn" class="img-change-btn">Change</button>
           </div>
-          <div class="field">
-            <label>Word</label>
-          <input
-            type="text"
-            name=""
-            id="addform-title"
-          />
-          </div>
-          <div class="field">
-            <label>Meaning</label>
-          <textarea
-            name=""
-            id="addform-body"
-            cols="5"
-            rows="5"
-          ></textarea>
-          </div>
+        <div class="field">
+          <label>Word</label>
+          <input type="text" name="" id="addform-title" />
+        </div>
+        <div class="field">
+          <label>Meaning</label>
+          <textarea name="" id="addform-body" cols="5" rows="5"></textarea>
+        </div>
         <div class="ui buttons">
-          <button class="ui labeled icon button negative" id="addform-cancel"> <i class="close icon"></i>Cancel</button>
+          <button class="ui labeled icon button negative" id="addform-cancel">
+            <i class="close icon"></i>Cancel
+          </button>
           <div class="or"></div>
-          <button class="ui right labeled icon button positive" id="addform-save">Save</button>
+          <button
+            class="ui right labeled icon button positive"
+            id="addform-save"
+          >
+            Save
+          </button>
         </div>
       </div>
-      
     </div>
     <div class="ui modal" id="modal">
       <div class="content">
         <div class="modal-input">
-           <div class="ui form">
-                       <div class="img-display" id="modal-img">
+          <div class="ui form">
+          <div class="img-display" id="modal-img">
             <img
               src=""
               alt="image"
@@ -83,15 +86,15 @@
             />
             <button id="modal-img-btn" class="img-change-btn">Change</button>
           </div>
-          <div class="field">
-          <input type="text" name="" id="modal-title" />
-          </div>
-          <div class="field">
-          <textarea name="" id="modal-body" cols="5" rows="5"></textarea>
+            <div class="field">
+              <input type="text" name="" id="modal-title" />
+            </div>
+            <div class="field" style="margin-bottom: 10px">
+              <textarea name="" id="modal-body" cols="5" rows="5"></textarea>
+            </div>
           </div>
         </div>
-        </div>
-    
+
         <div class="ui buttons actions">
           <button class="ui button orange" id="modal-back">Back</button>
           <button class="ui button negative" id="modal-delete">Delete</button>
@@ -101,17 +104,13 @@
       </div>
     </div>
 
-        <div class="ui modal" id="searchForm" name="">
-          
+    <div class="ui modal" id="searchForm" name="">
       <div class="header search-header">
         <i class="close icon" id="search-exit"></i>
-         <h3 class="ui header">
-           <div class="content">
-    Image Search
-  </div>
-          
-          </h3>
-        
+        <h3 class="ui header">
+          <div class="content">Image Search</div>
+        </h3>
+
         <div class="btngroup search-btngroup">
           <input
             type="text"
@@ -120,28 +119,24 @@
             class="modal-title search-query"
           />
           <button id="search-btn" class="ui basic button">
-            <i class="search icon"></i>Search</button>
-
+            <i class="search icon"></i>Search
+          </button>
         </div>
-      <div class="ui grid">
-      <div class="four column row" id="search-content">
+        <div class="ui grid">
+          <div class="four column row" id="search-content"></div>
         </div>
-
       </div>
-      </div>
-
     </div>
-    
   </body>
 </html>
 
 <script>
-$(function(){
-	$("#test").click(function(){
-		$(".test").modal('show');
-	});
-	$(".test").modal({
-		closable: true
-	});
-});
+  $(function () {
+    $("#test").click(function () {
+      $(".test").modal("show");
+    });
+    $(".test").modal({
+      closable: true,
+    });
+  });
 </script>

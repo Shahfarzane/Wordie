@@ -42,13 +42,7 @@ app.get("/", (req, res) => {
 app.get("/api/imgs/:search", (req, res) => {
   const param = req.params.search;
   imgSearch.getImages(param, res);
-  // try {
-  //   const jsonString = fs.readFileSync("./images.json");
-  //   res.send(JSON.parse(jsonString));
-  // } catch (ex) {
-  //   console.error(ex);
-  //   res.send({ search: param, message: "image retrieval error" });
-  // }
+
 });
 
 app.listen(port, () => {
