@@ -3,6 +3,10 @@ const port = 3000;
 const app = express();
 const model = require("./model/words");
 const path = require("path");
+const imgSearch = require("./searchLogic.js");
+const fs = require("fs");
+
+
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
@@ -33,6 +37,18 @@ app.delete("/api/words/:id", (req, res) => {
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+app.get("/api/imgs/:search", (req, res) => {
+  const param = req.params.search;
+  imgSearch.getImages(param, res);
+  // try {
+  //   const jsonString = fs.readFileSync("./images.json");
+  //   res.send(JSON.parse(jsonString));
+  // } catch (ex) {
+  //   console.error(ex);
+  //   res.send({ search: param, message: "image retrieval error" });
+  // }
 });
 
 app.listen(port, () => {
