@@ -214,7 +214,6 @@ function addCard(input) {
   check.setAttribute("class", "ui master checkbox");
   check.checked = input.done;
   check.onclick = (e) => {
-    //update the database
     const index = STATE.findIndex((i) => i.id == e.target.id);
     const data = STATE[index];
     data.done = !data.done;
@@ -232,7 +231,6 @@ function addCard(input) {
         loadCards();
       })
       .catch((ex) => console.log(ex));
-    //transfer to completed or incomplete
     container.innerHTML = "";
     loadCards();
   };
