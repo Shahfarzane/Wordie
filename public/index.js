@@ -87,7 +87,7 @@ addFormSave.onclick = () => {
   const data = {
     title: addFormTitle.value,
     body: addFormBody.value,
-    img: JSON.parse(addFormImg.attributes.name.value),
+    img: addFormImg.attributes.name.value ? JSON.parse(addFormImg.attributes.name.value) : "",
     learned: false,
   };
   fetch("/api/words", {
@@ -270,6 +270,8 @@ function addCard(input) {
     modalTitle.value = STATE[index].title;
     modalTitle.name = STATE[index].id;
     modalBody.value = STATE[index].body;
+    modalImg.setAttribute("name", JSON.stringify(STATE[index].img));
+
 
     modalImg.setAttribute("src", STATE[index].img.url);
     modalTitle.setAttribute("readonly", "readonly");
