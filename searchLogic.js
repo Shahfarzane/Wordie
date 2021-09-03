@@ -1,7 +1,7 @@
 require("dotenv").config();
 const imageSearch = require("image-search-google");
 
-const client = new imageSearch(process.env.TODO_CSE, process.env.TODO_API_KEY);
+const client = new imageSearch(process.env.CSE, process.env.API_KEY);
 
 function getImages(param, res) {
   client

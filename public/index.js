@@ -76,18 +76,17 @@ addFormSave.onclick = () => {
     return;
   }
 
-   if (!addFormBody.value) {
-     alert("description is required!");
-     return;
-   }
-
-    
-
+  if (!addFormBody.value) {
+    alert("description is required!");
+    return;
+  }
 
   const data = {
     title: addFormTitle.value,
     body: addFormBody.value,
-    img: addFormImg.attributes.name.value ? JSON.parse(addFormImg.attributes.name.value) : "",
+    img: addFormImg.attributes.name.value
+      ? JSON.parse(addFormImg.attributes.name.value)
+      : "",
     learned: false,
   };
   fetch("/api/words", {
@@ -188,10 +187,9 @@ modalSave.onclick = () => {
   modalSave.disabled = true;
 };
 
-
 modalDelete.onclick = () => {
   if (confirm("Are you sure you want to delete this entry?")) {
-    //delete from database
+    //delete from database -- check for errors before sending to itslearning
     const index = STATE.findIndex((i) => i.id == modalTitle.name);
     fetch(`/api/words/${modalTitle.name}`, {
       method: "DELETE",
@@ -271,7 +269,6 @@ function addCard(input) {
     modalTitle.name = STATE[index].id;
     modalBody.value = STATE[index].body;
     modalImg.setAttribute("name", JSON.stringify(STATE[index].img));
-
 
     modalImg.setAttribute("src", STATE[index].img.url);
     modalTitle.setAttribute("readonly", "readonly");
