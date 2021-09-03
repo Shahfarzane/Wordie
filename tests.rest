@@ -1,0 +1,53 @@
+@route1=http://localhost:3000/api/words
+@route2=http://localhost:3000/api/imgs
+
+//Get all words
+GET {{route1}}
+
+###
+
+
+//Create new entry(word)
+POST {{route1}}
+content-Type: application/json
+
+{
+    "title":"sample title",
+    "body": "sample description",
+    "img": "",
+    "done": false
+}
+###
+
+
+//Get a specific word, provided the id
+//Get request with route1/:id
+GET {{route1}}/3
+
+###
+
+
+//Update a specific word, provided the id
+//'Put' request with route1/:id
+PUT {{route1}}/2
+content-Type: application/json
+
+{
+    "title":"updated title",
+    "body": "updated description",
+    "img": "",
+    "done": false
+}
+
+###
+
+
+//Delete a specific word, provided the id
+//'Delete' request with route1/:id
+DELETE {{route1}}/1
+
+###
+
+//Testing the image search endpoint
+GET {{route2}}/black mamba
+
